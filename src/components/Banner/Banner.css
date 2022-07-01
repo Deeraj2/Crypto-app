@@ -1,0 +1,26 @@
+.banner{
+    background-image: url(./assests/banner.jpg);
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-top: 25px;
+}
+.title{
+    text-align: center;
+}
+.title > h1{
+    font-size: 45px;
+    color: #2190FF;
+    cursor: pointer;
+}
+.title > p{
+    margin-top: 8px;
+    color: lightgray;
+}
+.banner-info{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+}

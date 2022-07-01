@@ -1,0 +1,15 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    padding: 15px 64px;
+}
+.header-title{
+    cursor: pointer;
+    font-size: 25px;
+    color: #2190FF;
+}
+.header-menu{
+    display: flex;
+    cursor: pointer;
+}
