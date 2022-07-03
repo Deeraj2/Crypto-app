@@ -1,23 +1,27 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
 .coin-page{
     display: flex;
     padding: 20px;
 }
 .coin-sidebar{
     border-right: 1px solid gray;
-    padding: 10px;
+    padding: 20px;
+    width: 30%;
 }
 .coin-image{
     height: 200px;
     margin-bottom: 20px;
 }
 .coin-name{
-    font-size: 30px;
-    font-weight: 400;
+    font-size: 40px;
+    font-weight: 700;
     margin-bottom: 20px;
+    font-family: 'Montserrat', sans-serif;
 }
 .coin-desc{
     width: 100%;
-    padding: 25px;
     padding-bottom: 15px;
     padding-top: 0;
     text-align: justify;
@@ -29,7 +33,21 @@
 }
 .coin-market > h4{
     font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
 }
 .coin-marketdata{
     font-size: 20px;
+}
+
+@media(max-width: 1500px){
+    .coin-page{
+        display: flex;
+        flex-direction: column;
+    }
+    .coin-sidebar {
+        border-right: none;
+        padding: 20px;
+        width: 100%;
+        align-items: center;
+    }
 }

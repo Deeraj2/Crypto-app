@@ -7,6 +7,8 @@
 .header-title{
     cursor: pointer;
     font-size: 25px;
+    margin-top: 4px;
+    font-family: 'Montserrat', sans-serif;
     color: #2190FF;
 }
 .header-menu{

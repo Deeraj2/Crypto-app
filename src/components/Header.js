@@ -27,8 +27,8 @@ function Header({currency, setCurrency}) {
               id="demo-simple-select"
               value={currency}
               onChange={(e) => setCurrency(e.target.value)}
-              style={{ width: 100, height: 40, marginLeft: 15, color: '#fff', border: '1px solid #fff' }}
-              
+              style={{ width: 100, height: 40, marginLeft: 15, color: '#fff', border: '1px solid #fff'}}
+              sx={{"& .MuiSvgIcon-root": {color: "#fff",}}}
             >
               <MenuItem value={"USD"}>USD</MenuItem>
               <MenuItem value={"INR"}>INR</MenuItem>

@@ -32,26 +32,26 @@ function CoinPage({symbol, currency}) {
 
   return (
     <div className='coin-page'>
-      <div className='coin-sidebar'>
-          <img src={coin?.image.large} alt={coin?.name} className="coin-image" />
-          <h3 className='coin-name'>{coin?.name}</h3>
-          <p className='coin-desc'>{ReacHtmlParser(coin?.description.en.split(". ")[0])}</p>
-          <div className='coin-marketdata'>
-            <div className='coin-market'>
-              <h4>Rank:</h4>&nbsp;&nbsp;
-              <h4>{coin?.market_cap_rank}</h4>
-            </div>
-            <div className='coin-market'>
-              <h4>Current Price:</h4>&nbsp;&nbsp;
-              <h4>{symbol}&nbsp;{numberWithCommas(coin?.market_data.current_price[currency.toLowerCase()])}</h4>
-            </div>
-            <div className='coin-market'>
-              <h4>Market Cap:</h4>&nbsp;&nbsp;
-              <h4>{symbol}&nbsp;{numberWithCommas(coin?.market_data.market_cap[currency.toLowerCase()].toString().slice(0, -6))}M</h4>
-            </div>
+          <div className='coin-sidebar'>
+              <img src={coin?.image.large} alt={coin?.name} className="coin-image" />
+              <h3 className='coin-name'>{coin?.name}</h3>
+              <p className='coin-desc'>{ReacHtmlParser(coin?.description.en.split(". ")[0])}</p>
+              <div className='coin-marketdata'>
+                <div className='coin-market'>
+                  <h4>Rank:</h4>&nbsp;&nbsp;
+                  <h4>{coin?.market_cap_rank}</h4>
+                </div>
+                <div className='coin-market'>
+                  <h4>Current Price:</h4>&nbsp;&nbsp;
+                  <h4>{symbol}&nbsp;{numberWithCommas(coin?.market_data.current_price[currency.toLowerCase()])}</h4>
+                </div>
+                <div className='coin-market'>
+                  <h4>Market Cap:</h4>&nbsp;&nbsp;
+                  <h4>{symbol}&nbsp;{numberWithCommas(coin?.market_data.market_cap[currency.toLowerCase()].toString().slice(0, -6))}M</h4>
+                </div>
+              </div>
           </div>
-      </div>
-      <CoinInfo coin={coin} />
+          <CoinInfo coin={coin} currency={currency} />
     </div>
   )
 }

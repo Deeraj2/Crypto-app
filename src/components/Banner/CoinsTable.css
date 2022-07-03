@@ -16,6 +16,7 @@
     font-size: 30px;
     font-weight: 400;
     margin-bottom: 1.5rem;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .coins-info > input{
@@ -26,6 +27,7 @@
     border-radius: 10px;
     color: white;
     background-color: transparent;
+    font-family: 'Montserrat', sans-serif;
     border: 1px solid darkgray;
     outline: none;
 }
@@ -76,8 +78,7 @@
     color: white;
 }
 .pagination{
-    padding: 20px;
-    width: 100%;
+    padding-top: 20px;
     display: flex;
     justify-content: center;
 }

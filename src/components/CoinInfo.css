@@ -1,3 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
 .coin-info{
     padding: 10px;
+    width: 70%;
+}
+.button{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 40px;
+    width: 100%;
+}
+.button-days{
+    width: 150px;
+    height: 50px;
+    font-size: 17px;
+    font-weight: 600;
+    color: white;
+    border: none;
+    background-color: #2190FF;
+    border-radius: 9px;
+    transition: 0.3s all;
+    cursor: pointer;
+    margin-right: 10px;
+    font-family: 'Montserrat', sans-serif;
+}
+.button-days:hover{
+    background-color: #fff;
+    color: #2190FF;
+}
+@media(max-width: 1500px){
+    .coin-info{
+        padding: 10px;
+        width: 100%;
+    }
 }

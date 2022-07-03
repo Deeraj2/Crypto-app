@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
 .banner{
     background-image: url(./assests/banner.jpg);
     height: 400px;
@@ -8,6 +9,7 @@
 }
 .title{
     text-align: center;
+    font-family: 'Montserrat', sans-serif;
 }
 .title > h1{
     font-size: 45px;
