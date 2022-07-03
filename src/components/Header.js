@@ -3,6 +3,7 @@ import './Header.css';
 import { useNavigate } from 'react-router-dom';
 import { Select, MenuItem } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import AuthModal from './Authentication/AuthModal';
 
 function Header({currency, setCurrency}) {
     const navigate = useNavigate();
@@ -33,6 +34,7 @@ function Header({currency, setCurrency}) {
               <MenuItem value={"USD"}>USD</MenuItem>
               <MenuItem value={"INR"}>INR</MenuItem>
             </Select>
+              <AuthModal />
             </div>
         </div>
   </ThemeProvider>

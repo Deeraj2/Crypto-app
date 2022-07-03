@@ -1,34 +1,24 @@
 import { LinearProgress, Pagination, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material';
-import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router';
-import { CoinList } from '../../api/api';
 import './CoinsTable.css';
 
 export function numberWithCommas(x) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
-function CoinsTable({currency, symbol}) {
+function CoinsTable({currency, symbol, coins, loading, fetchCoins}) {
 
     const header = ["Coin", "Price", "24h Change", "Market Cap"]
     const navigate = useNavigate()
 
     const [page, setPage] = useState(1)
-    const [coins, setCoins] = useState([])
-    const [loading, setLoading] = useState(false)
     const [search, setSearch] = useState('')
 
-    console.log(coins)
 
     useEffect(()=>{
-        const fetchCoins = async() => {
-            setLoading(true)
-            const { data } = await axios.get(CoinList(currency))
-            setCoins(data)
-            setLoading(false)
-        }
-        return fetchCoins;
+        fetchCoins()
+        //eslint-disable-next-line react-hooks/exhaustive-deps
     }, [currency])
     
     const handleSearch = () =>{
