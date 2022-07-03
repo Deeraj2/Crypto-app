@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import ReacHtmlParser from 'react-html-parser'
 import { useParams } from 'react-router';
 import { SingleCoin } from '../api/api';
-import CoinInfo from '../components/CoinInfo';
+import CoinInfo from '../components/CoinInfo/CoinInfo';
 import './CoinPage.css';
 
 export function numberWithCommas(x) {

@@ -3,7 +3,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import {  Line as chartjs} from 'chart.js/auto'
 import { Line } from 'react-chartjs-2';
-import { HistoricalChart } from '../api/api';
+import { HistoricalChart } from '../../api/api';
 import './CoinInfo.css';
 import { chartDays } from './CoinButtonData';
 

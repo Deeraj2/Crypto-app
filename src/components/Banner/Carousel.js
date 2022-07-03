@@ -5,6 +5,11 @@ import { Link } from 'react-router-dom'
 import { TrendingCoins } from '../../api/api';
 import './Carousel.css';
 
+
+export function numberWithCommas(x) {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
 function Carousel({currency, symbol}) {
 
   const [trending, setTrending] = useState([])
@@ -29,8 +34,8 @@ function Carousel({currency, symbol}) {
                   height= "80"
                   alt={coin.name}
                   />
-            <p className='carouse-24hr'><span>{coin?.symbol}</span>&nbsp;<span style={{color: profit > 0 ? "#228B22" : "red" , fontWeight: 500 }} >{profit && "+"}{coin?.price_change_percentage_24h}</span></p>
-            <p className='carousel-detail'><span>{symbol}</span>{coin.current_price}</p>
+            <p className='carouse-24hr'><span>{coin?.symbol}</span>&nbsp;<span style={{color: profit > 0 ? "#228B22" : "red" , fontWeight: 500 }} >{profit && "+"}{coin?.price_change_percentage_24h}%</span></p>
+            <p className='carousel-detail'><span>{symbol}</span>{numberWithCommas(coin?.current_price)}</p>
           </Link> 
             
       )

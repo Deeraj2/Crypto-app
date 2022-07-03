@@ -1,6 +1,6 @@
 import React from 'react'
 import Banner from '../components/Banner/Banner'
-import CoinsTable from '../components/Banner/CoinsTable'
+import CoinsTable from '../components/Home/CoinsTable'
 
 function HomePage({ currency, symbol }) {
   return (
