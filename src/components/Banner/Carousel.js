@@ -24,12 +24,12 @@ function Carousel({currency, symbol}) {
 
       return(
         
-          <Link to={`/coin/${coin.id}` } className='carousel'>
+          <Link to={`/coins/${coin.id}` } className='carousel'>
             <img   src={coin?.image} 
                   height= "80"
                   alt={coin.name}
                   />
-            <p className='carouse-24hr'><span>{coin?.symbol}</span>&nbsp;<span style={{color: profit > 0 ? "#2190FF" : "red" , fontWeight: 500 }} >{profit && "+"}{coin?.price_change_percentage_24h}</span></p>
+            <p className='carouse-24hr'><span>{coin?.symbol}</span>&nbsp;<span style={{color: profit > 0 ? "#228B22" : "red" , fontWeight: 500 }} >{profit && "+"}{coin?.price_change_percentage_24h}</span></p>
             <p className='carousel-detail'><span>{symbol}</span>{coin.current_price}</p>
           </Link> 
             
@@ -48,13 +48,14 @@ function Carousel({currency, symbol}) {
     }
 
   return (
-    <div classname="coin">
+    <div >
       <AliceCarousel 
         mouseTracking
         infinite
         autoPlayInterval={1000}
         animationDuration={1500}
         disableDotsControls
+        disableButtonsControls
         responsive={responsive}
         autoPlay
         items={items}

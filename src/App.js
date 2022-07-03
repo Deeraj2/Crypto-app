@@ -8,12 +8,11 @@ import CoinPage from './Pages/CoinPage';
 function App() {
   
   const [currency, setCurrency] = useState("INR")
-    const [symbol, setSymbol] = useState("Rs")
+    const [symbol, setSymbol] = useState("₹")
 
-    console.log(currency)
 
     useEffect(()=>{
-        if(currency === "INR") setSymbol("Rs")
+        if(currency === "INR") setSymbol("₹")
         else if(currency === "USD") setSymbol("$")
     },[currency])
 
@@ -23,7 +22,7 @@ function App() {
         <Header  currency={currency} setCurrency={setCurrency} />
         <Routes>
           <Route path='/' element={ <HomePage  currency={currency}  symbol={symbol}/> } />
-          <Route path="/coin/:id" element={ <CoinPage /> } />
+          <Route path="/coins/:id" element={ <CoinPage symbol={symbol} currency={currency} /> } />
         </Routes>
       </BrowserRouter>
     </div>

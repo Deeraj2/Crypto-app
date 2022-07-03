@@ -1,0 +1,35 @@
+.coin-page{
+    display: flex;
+    padding: 20px;
+}
+.coin-sidebar{
+    border-right: 1px solid gray;
+    padding: 10px;
+}
+.coin-image{
+    height: 200px;
+    margin-bottom: 20px;
+}
+.coin-name{
+    font-size: 30px;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+.coin-desc{
+    width: 100%;
+    padding: 25px;
+    padding-bottom: 15px;
+    padding-top: 0;
+    text-align: justify;
+    color: lightgray;
+    margin-bottom: 10px;
+}
+.coin-market{
+    display: flex;
+}
+.coin-market > h4{
+    font-weight: 500;
+}
+.coin-marketdata{
+    font-size: 20px;
+}
