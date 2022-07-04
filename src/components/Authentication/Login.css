@@ -1,0 +1,38 @@
+.login{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.login>input {
+    height: 50px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    background-color: whitesmoke;
+}
+
+::placeholder {
+    color: rgb(59, 59, 59);
+}
+
+.login-btn {
+    height: 50px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 600;
+    color: whitesmoke;
+    background-color: #2190FF;
+    cursor: pointer;
+    transition: 0.3s all ease-in-out;
+}
+
+.login-btn:hover {
+    color: #2190FF;
+    background-color: whitesmoke;
+}

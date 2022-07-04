@@ -1,0 +1,62 @@
+.side-bar{
+    margin-left: 13px;
+}
+
+.sidebar-container{
+    width: 350px;
+    padding: 25px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #0D1117;
+    color: #fff;
+}
+.sidebar-name{
+    width: 100%;
+    font-size: 20px;
+    margin-left: 30px;
+    font-weight: 700;
+    word-wrap: break-word;
+}
+.container-avatar{
+    margin-top: 20px;
+    height: 200px;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    background-color: #2190FF;
+}
+.sidebar-watchlist{
+    margin-top: 30px;
+    flex: 1;
+    width: 100%;
+    height: 30rem;
+    background-color: gray;
+    border-radius: 10px;
+    padding: 15px;
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12;
+    overflow-y: scroll;
+}
+.sidebar-btn{
+    position: absolute;
+    bottom: 20px;
+    width: 300px;
+    height: 50px;
+    border: none;
+    border-radius: 9px;
+    font-size: 19px;
+    font-weight: bold;
+    background-color: #2190FF;
+    color: whitesmoke;
+    transition: 0.3s all ease-in-out;
+    cursor: pointer;
+}
+.sidebar-btn:hover{
+    background-color: whitesmoke;
+    color: #2190FF;
+}

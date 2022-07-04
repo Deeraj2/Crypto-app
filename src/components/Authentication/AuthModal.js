@@ -5,10 +5,12 @@ import Fade from '@mui/material/Fade';
 import Button from '@mui/material/Button';
 import './AuthModal.css';
 import { AppBar, Tab, Tabs } from '@mui/material';
+import Login from './Login';
+import Signup from './Signup';
 
 
 
-export default function AuthModal() {
+export default function AuthModal({ setAlert}) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -45,6 +47,7 @@ export default function AuthModal() {
                     <Tab label="Sign Up" sx={{color: "#fff"}} />
                 </Tabs>
             </AppBar>
+            {value === 0 ? <Login handleClose={handleClose} setAlert={setAlert}/> : <Signup handleClose={handleClose} setAlert={setAlert} /> }
           </div>
         </Fade>
       </Modal>
