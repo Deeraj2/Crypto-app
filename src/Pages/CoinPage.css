@@ -38,6 +38,40 @@
 .coin-marketdata{
     font-size: 20px;
 }
+.coin-authbtn{
+    margin-top: 50px;
+    width: 200px;
+    height: 50px;
+    font-size: 16px;
+    font-weight: 600;
+    color: whitesmoke;
+    background-color: #2190FF;
+    border: none;
+    border-radius: 9px;
+    cursor: pointer;
+    transition: 0.3s all ease-in-out;
+}
+.coin-authbtn:hover{
+    color: #2190FF;
+    background-color: whitesmoke;
+}
+.coin-rmbtn{
+    margin-top: 50px;
+    width: 200px;
+    height: 50px;
+    font-size: 16px;
+    font-weight: 600;
+    color: whitesmoke;
+    background-color: rgb(161, 31, 31);
+    border: none;
+    border-radius: 9px;
+    cursor: pointer;
+    transition: 0.3s all ease-in-out;
+}
+.coin-rmbtn:hover {
+    color: rgb(161, 31, 31);
+    background-color: whitesmoke;
+}
 
 @media(max-width: 1500px){
     .coin-page{
@@ -49,5 +83,13 @@
         padding: 20px;
         width: 100%;
         align-items: center;
+    }
+    .coin-authbtn{
+        width: 150px;
+        font-size: 14px;
+    }
+    .coin-rmbtn{
+        width: 150px;
+        font-size: 14px;
     }
 }

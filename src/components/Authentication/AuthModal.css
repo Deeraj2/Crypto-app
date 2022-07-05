@@ -13,3 +13,25 @@
     transform: translate(-50%, -50%);
     box-shadow: 24px;
 }
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+.line1{
+    width: 150px;
+    border: 1px solid gray;
+    height: 0;
+    margin-right: 5px;
+}
+.line2 {
+    width: 150px;
+    border: 1px solid gray;
+    height: 0;
+    margin-left: 5px;
+}
+.or{
+    color: gray;
+}

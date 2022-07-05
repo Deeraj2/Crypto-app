@@ -6,7 +6,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import AuthModal from './Authentication/AuthModal';
 import UserSideBar from './Authentication/UserSideBar';
 
-function Header({currency, setCurrency, setAlert, user}) {
+function Header({currency, setCurrency, setAlert, user, watchlist, coins, symbol}) {
     const navigate = useNavigate();
     const darkTheme = createTheme({
         palette: {
@@ -35,7 +35,7 @@ function Header({currency, setCurrency, setAlert, user}) {
               <MenuItem value={"USD"}>USD</MenuItem>
               <MenuItem value={"INR"}>INR</MenuItem>
             </Select>
-             {user ?  (<UserSideBar user={user} setAlert={setAlert} />) : (<AuthModal setAlert={setAlert}/>) } 
+             {user ?  (<UserSideBar user={user} setAlert={setAlert} watchlist={watchlist} coins={coins} symbol={symbol} />) : (<AuthModal setAlert={setAlert}/>) } 
             </div>
         </div>
   </ThemeProvider>

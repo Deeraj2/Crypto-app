@@ -14,18 +14,14 @@
 .sidebar-name{
     width: 100%;
     font-size: 20px;
-    margin-left: 30px;
     font-weight: 700;
     word-wrap: break-word;
 }
 .container-avatar{
     margin-top: 20px;
-    height: 200px;
-    width: 200px;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 20px;
-    background-color: #2190FF;
 }
 .sidebar-watchlist{
     margin-top: 30px;
@@ -59,4 +55,35 @@
 .sidebar-btn:hover{
     background-color: whitesmoke;
     color: #2190FF;
+}
+.sidebar-profile{
+    text-align: center;
+}
+.watchlist-p{
+    margin-bottom: 20px;
+    font-weight: 600
+}
+.watchlist-coin{
+    padding: 10px;
+    border-radius: 5px;
+    color: whitesmoke;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0D1117;
+    box-shadow: 0 0 3px black;
+    margin-bottom: 10px;
+}
+.watchlist-name{
+    font-weight: 500;
+}
+.watchlist-money{
+    display: flex;
+}
+.watchlist-money > span{
+    margin-right: 10px;
+}
+.delete-icon{
+    cursor: pointer;
 }

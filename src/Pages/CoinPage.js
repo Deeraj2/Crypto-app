@@ -5,20 +5,71 @@ import ReacHtmlParser from 'react-html-parser'
 import { useParams } from 'react-router';
 import { SingleCoin } from '../api/api';
 import CoinInfo from '../components/CoinInfo/CoinInfo';
+import db from '../components/firebase/firebase';
 import './CoinPage.css';
+import {  doc, setDoc } from "firebase/firestore"; 
+
 
 export function numberWithCommas(x) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
-function CoinPage({symbol, currency}) {
+function CoinPage({symbol, currency, user, watchlist,setAlert}) {
 
   const { id } = useParams();
   const [coin, setCoin] = useState();
 
-  console.log(coin)
+  const inWatchList = watchlist.includes(coin?.id)
 
-  
+  const addToWatchList = async() => {
+    const coinRef = doc(db, "watchlist", user.uid);
+
+    try {
+      await setDoc(
+        coinRef,
+        { coins: watchlist ? [...watchlist, coin?.id] : [coin?.id] },
+        { merge: true }
+      );
+
+
+      setAlert({
+        open: true,
+        message: `${coin.name} Added to the watchlist !`,
+        type: "success"
+      })
+    } catch (error) {
+        setAlert({
+          open: true,
+          message: error.message,
+          type: 'error'
+        }) 
+    }
+  }
+
+  const removeFromWatchList = async() =>{
+    const coinRef = doc(db, "watchlist", user.uid);
+
+    try {
+      await setDoc(
+        coinRef,
+        { coins: watchlist.filter((watch)=> watch !== coin?.id) },
+        { merge: true }
+      );
+
+
+      setAlert({
+        open: true,
+        message: `${coin.name} Removed from the watchlist !`,
+        type: "success"
+      })
+    } catch (error) {
+        setAlert({
+          open: true,
+          message: error.message,
+          type: 'error'
+        }) 
+    }
+  }
 
   useEffect(()=>{
     const fetchSingleCoin = async() => {
@@ -50,6 +101,9 @@ function CoinPage({symbol, currency}) {
                   <h4>{symbol}&nbsp;{numberWithCommas(coin?.market_data.market_cap[currency.toLowerCase()].toString().slice(0, -6))}M</h4>
                 </div>
               </div>
+              {user && (
+                <button className= {inWatchList ?  "coin-rmbtn" : "coin-authbtn"} onClick={ inWatchList ? removeFromWatchList : addToWatchList} >{ inWatchList ? "Remove from Watchlist" : "Add to Watchlist"}</button>
+              )}
           </div>
           <CoinInfo coin={coin} currency={currency} />
     </div>

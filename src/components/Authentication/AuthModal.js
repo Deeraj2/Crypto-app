@@ -4,9 +4,11 @@ import Modal from '@mui/material/Modal';
 import Fade from '@mui/material/Fade';
 import Button from '@mui/material/Button';
 import './AuthModal.css';
-import { AppBar, Tab, Tabs } from '@mui/material';
+import { AppBar, Box, Tab, Tabs } from '@mui/material';
 import Login from './Login';
 import Signup from './Signup';
+import GoogleButton from 'react-google-button';
+import firebase from 'firebase/compat/app';
 
 
 
@@ -18,6 +20,26 @@ export default function AuthModal({ setAlert}) {
   const [value, setValue] = useState(0);
   const handleChange = (event, newValue) =>{
     setValue(newValue)
+  }
+
+  const googleProvider = new firebase.auth.GoogleAuthProvider()
+
+  const signInWithGoogle = () => {
+    firebase.auth().signInWithPopup(googleProvider).then((res)=>{
+      setAlert({
+        open: true,
+        message: `Sign Up Successfull. Welcome ${res.user.email}`,
+        type: "success"
+      })
+      handleClose();
+    }).catch((error)=>{
+      setAlert({
+        open: true,
+        message: error.message,
+        type: "error"
+      })
+      handleClose();
+    })
   }
 
   return (
@@ -48,6 +70,14 @@ export default function AuthModal({ setAlert}) {
                 </Tabs>
             </AppBar>
             {value === 0 ? <Login handleClose={handleClose} setAlert={setAlert}/> : <Signup handleClose={handleClose} setAlert={setAlert} /> }
+            <Box className='auth-google'>
+              <div className='container'>
+                <span className='line1'></span>
+                <span className='or'>Or</span>
+                <span className='line2'></span>
+              </div>
+              <GoogleButton style={{ width: "90%", outline: "none", borderRadius: "5px", marginLeft: "20px", marginBottom: "20px" }} onClick={signInWithGoogle} />
+            </Box>
           </div>
         </Fade>
       </Modal>
